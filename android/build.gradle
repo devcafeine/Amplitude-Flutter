@@ -2,7 +2,7 @@ group 'com.amplitude.amplitude_flutter'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.9.22'
+    ext.kotlin_version = '2.0.10'
     repositories {
         google()
         mavenCentral()
@@ -41,9 +41,13 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
 }
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.0.10"
     implementation 'com.amplitude:android-sdk:3.35.1'
     implementation 'com.squareup.okhttp3:okhttp:4.12.0'
 }
